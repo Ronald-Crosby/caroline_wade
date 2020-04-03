@@ -1,7 +1,15 @@
 /* main styles here */
 
+@font-face {
+	font-family: 'Bandeins Strange';
+	src: url('../fonts/bandeins-strange-variable.woff2');
+}
+
 html {
 	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
 a {
@@ -11,8 +19,10 @@ a {
 
 .body {
 	background: black;
-	font-size: 2rem;
+	font-size: 6rem;
 	color: white;
+	font-family: 'Bandeins Strange', Arial, sans-serif;
+	font-weight: 400;
 }
 
 .main {
@@ -21,14 +31,33 @@ a {
 
 .header {
 	position: fixed;
-	top: 4rem;
-	left: 4rem;
-	right: 4rem;
+	top: 8rem;
+	left: 8rem;
+	right: 8rem;
 	display: flex;
 	justify-content: space-between;
+	z-index: 1;
 }
 
 nav * + * {
 	margin-left: 2rem;
+}
+
+.nav-link {
+	font-variation-settings: 'wght' 100, 'wdth' 0;
+	transition: font-variation-settings 0.5s ease;
+
+	&:hover {
+		font-variation-settings: 'wght' 800, 'wdth' 250;
+	}
+}
+
+.image {
+	width: 100%;
+	height: calc(100vh - 4rem);
+	object-fit: cover;
+	object-position: center;
+	position: sticky;
+	top: 4rem;
 }
 
